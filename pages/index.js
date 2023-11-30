@@ -42,7 +42,7 @@ export default function Home() {
               <li>
                 <a
                   className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8 "
-                  target="_blank" href="https://www.google.co.in/"
+                  target="_blank" href="/Resume.pdf"
                   rel="noreferrer"
                 >
                   Resume
