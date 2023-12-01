@@ -67,7 +67,7 @@ export default function Home() {
             Full-stack developer and designer, passionate about creating innovative solutions. Lets connect and explore opportunities!
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-  <a target="_blank"  href="https://github.com/Manibhardawaj"  rel="noreferrer">
+  <a target="_blank"  href="https://github.com/Manibharadwaj"  rel="noreferrer">
     <AiFillGithub />
   </a>
   <a target="_blank" href="https://www.linkedin.com/in/mani-bharadwaj" rel="noreferrer">
@@ -197,7 +197,7 @@ export default function Home() {
               />
             </div>
             </a>
-            <a href="https://manibhardawaj.github.io/Analog_clock/" target="_blank" rel="noopener noreferrer">
+            <a href="https://manibharadwaj.github.io/Analog_clock/" target="_blank" rel="noopener noreferrer">
             
             <div className="basis-1/3 flex-1">
               <Image
