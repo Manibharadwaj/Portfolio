@@ -210,7 +210,7 @@ export default function Home() {
               />
             </div>
             </a>
-            <a href="https://github.com/Manibhardawaj" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Manibharadwaj" target="_blank" rel="noopener noreferrer">
             
             <div className="basis-1/3 flex-1">
               <Image
