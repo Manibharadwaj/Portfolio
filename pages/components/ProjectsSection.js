@@ -43,7 +43,7 @@ export default function ProjectsSection() {
   <div className="max-w-screen-lg mx-auto text-center">
     <h3 className="text-4xl font-bold py-2 dark:text-white">Projects</h3>
     <p className="text-lg py-3 leading-8 text-gray-800 dark:text-gray-200">
-      As a passionate developer with a focus on both Fullstack and AI-driven solutions, I've worked on diverse projects that showcase my skills in building innovative web applications and intuitive user interfaces. From developing fraud detection systems to emergency response apps, each project reflects my dedication to delivering high-quality, functional, and user-centered digital solutions.
+      As a passionate developer with a focus on both Fullstack and AI-driven solutions, I&apos;ve worked on diverse projects that showcase my skills in building innovative web applications and intuitive user interfaces. From developing fraud detection systems to emergency response apps, each project reflects my dedication to delivering high-quality, functional, and user-centered digital solutions.
     </p>
     <p className="text-lg text-gray-700 dark:text-gray-300">Check them out below.</p>
   <br/>
