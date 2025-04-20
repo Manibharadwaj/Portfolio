@@ -47,7 +47,7 @@ export default function Home() {
             </ul>
           </nav>
 
-          <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:mt-0 md:h-96 md:w-96 sm:ml-10">
+          <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:mt-0 md:h-96 md:w-96">
           <Image src={myImage} layout="fill" objectFit="cover" alt="myImage" />
 
           </div>
