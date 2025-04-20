@@ -47,14 +47,14 @@ export default function Home() {
             </ul>
           </nav>
 
-          <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:mt-0 md:h-96 md:w-96">
-            <Image src={myImage} layout="fill" objectFit="cover" alt="myImage" />
+          <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:mt-0 md:h-96 md:w-96 sm:ml-10">
+          <Image src={myImage} layout="fill" objectFit="cover" alt="myImage" />
 
           </div>
 
           <div className="text-center p-10 py-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
-              Mani bharadwaj
+              Mani Bharadwaj
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
               Full stack Developer
