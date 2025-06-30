@@ -30,7 +30,7 @@ const projects = [
   {
     title: "YouTube",
     description: "A minimal YouTube-like UI built with React, offering a clean video listing interface.",
-    image: "/web1.png",
+    image: "/web4.png",
     tech: ["React", "CSS", "Netlify"],
     live: "https://myyoutubecom.netlify.app/",
     github: "https://github.com/Manibharadwaj",
