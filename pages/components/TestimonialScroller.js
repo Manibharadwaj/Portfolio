@@ -16,7 +16,7 @@ const testimonials = [
     img: "/manju.png",
   },
   {
-    name: "David Smith",
+    name: "Thanmay",
     title: "BCA Student - Researcher",
     content:
       "Working with Mani Bharadwaj was a game-changer. The solutions provided were innovative and very well executed. Highly recommended!",
