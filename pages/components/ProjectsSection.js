@@ -58,8 +58,8 @@ export default function ProjectsSection() {
               <Image
                 src={project.image}
                 alt={project.title}
-                layout="fill"
-                objectFit="cover"
+                fill={true}
+                style={{ objectFit: 'cover' }}
                 className="rounded-t-2xl"
               />
             </div>

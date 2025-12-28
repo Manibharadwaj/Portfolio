@@ -48,7 +48,7 @@ export default function Home() {
           </nav>
 
           <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:mt-0 md:h-96 md:w-96">
-          <Image src={myImage} layout="fill" objectFit="cover" alt="myImage" />
+          <Image src={myImage} fill={true} style={{ objectFit: 'cover' }} alt="myImage" />
 
           </div>
 
@@ -63,13 +63,13 @@ export default function Home() {
               Full-stack developer and designer, passionate about creating innovative solutions. Let&apos;s connect and explore opportunities!
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <a target="_blank" href="https://github.com/Manibharadwaj" rel="noreferrer">
+              <a target="_blank" href="https://github.com/Manibharadwaj" rel="noreferrer" className="hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer hover:text-black dark:hover:text-white hover:shadow-lg hover:shadow-gray-500/50">
                 <AiFillGithub />
               </a>
-              <a target="_blank" href="https://www.linkedin.com/in/mani-bharadwaj" rel="noreferrer">
+              <a target="_blank" href="https://www.linkedin.com/in/mani-bharadwaj" rel="noreferrer" className="hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-lg hover:shadow-blue-500/50">
                 <AiFillLinkedin />
               </a>
-              <a target="_blank" href="mailto:manibharadwajcr@gmail.com" rel="noreferrer">
+              <a target="_blank" href="mailto:manibharadwajcr@gmail.com" rel="noreferrer" className="hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer hover:text-red-500 dark:hover:text-red-400 hover:shadow-lg hover:shadow-red-500/50">
                 <AiFillMail />
               </a>
             </div>

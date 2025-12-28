@@ -1,31 +1,80 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
-const Box = ({ img, text, subtext, className, children }) => (
-  <div
-    className={`relative rounded-xl overflow-hidden ${className}`}
-    style={{ height: "300px" }}
-  >
-    {img && (
-      <Image
-        src={img}
-        alt="img"
-        layout="fill"
-        objectFit="cover"
-        className="rounded-xl blur-sm" // 👈 Added blur here
-      />
-    )}
+const Box = ({ img, text, subtext, className, children }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const boxRef = useRef(null);
 
-    {/* Overlay content */}
-    <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4 bg-black/40 text-white dark:text-white">
-      {text && <h2 className="text-lg font-semibold mb-2">{text}</h2>}
-      {subtext && <p className="text-sm text-gray-200">{subtext}</p>}
-      {children}
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (boxRef.current) {
+      observer.observe(boxRef.current);
+    }
+
+    return () => {
+      if (boxRef.current) {
+        observer.unobserve(boxRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={boxRef}
+      className={`relative rounded-xl overflow-hidden ${className} hover:scale-105 hover:rotate-y-12 hover:shadow-2xl hover:shadow-black/50 transition-all duration-500 cursor-pointer`}
+      style={{ height: "300px", perspective: "1000px" }}
+    >
+      {img && (
+        <Image
+          src={img}
+          alt="img"
+          fill={true}
+          style={{ objectFit: 'cover' }}
+          className={`rounded-xl transition-all duration-1000 ${isVisible ? 'blur-sm' : 'blur-none'}`}
+        />
+      )}
+
+      {/* Overlay content */}
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4 bg-black/40 text-white dark:text-white transition-all duration-500 hover:bg-black/20">
+        {text && (
+          <h2
+            className={`text-lg font-semibold mb-2 hover:text-yellow-300 transition-all duration-1000 ${
+              isVisible ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-4 blur-md'
+            }`}
+          >
+            {text}
+          </h2>
+        )}
+        {subtext && (
+          <p
+            className={`text-sm text-gray-200 hover:text-gray-100 transition-all duration-1000 delay-200 ${
+              isVisible ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-4 blur-md'
+            }`}
+          >
+            {subtext}
+          </p>
+        )}
+        <div
+          className={`transition-all duration-1000 delay-400 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+        >
+          {children}
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default function Skills() {
   const [copied, setCopied] = useState(false);

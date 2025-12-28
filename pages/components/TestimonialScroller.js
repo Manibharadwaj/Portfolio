@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 
 const testimonials = [
-  {
-    name: "Jyothi Gowda",
-    title: "Founder of Coco love",
-    content:
-      "Working with Mani Bharadwaj was a great experience. His professionalism, dedication, and passion for development made the project a success, making him the perfect partner for elevating your website and brand.",
-    img: "/jyothi.jfif",
-  },
+
   {
     name: "Manjunath",
     title: "Backend dev",
@@ -21,6 +15,13 @@ const testimonials = [
     content:
       "Working with Mani Bharadwaj was a game-changer. The solutions provided were innovative and very well executed. Highly recommended!",
     img: "/thanu.png",
+  },
+    {
+    name: "Pavan Kumar",
+    title: "Frontend dev",
+    content:
+      "Working with Mani Bharadwaj was a great experience. His professionalism, dedication, and passion for development made the project a success, making him the perfect partner for elevating your website and brand.",
+    img: "/pavan.jpeg",
   },
 ];
 
