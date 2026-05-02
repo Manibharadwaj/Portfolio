@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import {
   AiFillGithub,
   AiFillLinkedin,
@@ -28,7 +29,12 @@ export default function Home() {
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
             <h1 className="font-burtons text-xl">developedby</h1>
-            <ul className="flex items-center">
+            <ul className="flex items-center gap-6">
+              <li>
+                <Link href="/blog" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+                  Blog
+                </Link>
+              </li>
               <li>
                 <BsFillMoonStarsFill
                   onClick={() => setDarkMode(!darkMode)}
@@ -37,7 +43,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8 "
+                  className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-4 "
                   target="_blank" href="/Resume.pdf"
                   rel="noreferrer"
                 >
