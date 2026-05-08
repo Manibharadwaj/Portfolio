@@ -32,7 +32,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      frontmatter: data,
+      frontmatter: { ...data, slug: params.slug },
       content,
     },
   };
@@ -46,11 +46,33 @@ export default function BlogPost({ frontmatter, content }) {
       <Head>
         <title>{frontmatter.title} | Mani Bharadwaj</title>
         <meta name="description" content={frontmatter.excerpt} />
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:description" content={frontmatter.excerpt} />
+        <meta property="og:url" content={`https://manibharadwaj.netlify.app/blog/${frontmatter.slug || ''}`} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.excerpt} />
+        <link rel="canonical" href={`https://manibharadwaj.netlify.app/blog/${frontmatter.slug || ''}`} />
         <link rel="icon" href="/favicon.ico" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": frontmatter.title,
+            "description": frontmatter.excerpt,
+            "author": {
+              "@type": "Person",
+              "name": "Mani Bharadwaj"
+            },
+            "datePublished": frontmatter.date,
+            "url": `https://manibharadwaj.netlify.app/blog/${frontmatter.slug || ''}`
+          })}
+        </script>
       </Head>
 
       <main className="bg-wheat px-10 dark:bg-gray-900 md:px-20 lg:px-40 min-h-screen">
-        <nav className="py-10 mb-8 flex justify-between dark:text-white">
+        <nav className="py-10 mb-8 flex justify-between items-center dark:text-white">
           <Link href="/" className="font-burtons text-xl hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
             developedby
           </Link>
@@ -128,7 +150,7 @@ export default function BlogPost({ frontmatter, content }) {
       <footer className="text-center">
         <div className="border-t border-gray-300 dark:border-gray-700 py-2">
           <p className="text-gray-600 dark:text-gray-400">
-            Phone: <a href="tel:+91 9632453556">+91 9632453556</a>
+            Phone: <a href="tel:+919632453556">+91 9632453556</a>
           </p>
           <p className="text-gray-600 dark:text-gray-400">
             Email: <a href="mailto:manibharadwajcr@gmail.com">manibharadwajcr@gmail.com</a>

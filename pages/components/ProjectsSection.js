@@ -35,6 +35,30 @@ const projects = [
     live: "https://myyoutubecom.netlify.app/",
     github: "https://github.com/Manibharadwaj",
   },
+  {
+    title: "VS Code Blog Extension",
+    description: "A VS Code extension inspired by daily.dev that displays curated developer article cards directly inside the editor — featuring smooth in-editor UX, detailed article views, and zero context switching. Recognized by daily.dev CTO.",
+    image: "/vscode-extension.svg",
+    tech: ["VS Code API", "TypeScript", "React", "WebView"],
+    live: "https://github.com/Manibharadwaj/vs_code_blog",
+    github: "https://github.com/Manibharadwaj/vs_code_blog",
+  },
+  {
+    title: "Dynamic Pricing Intelligence Dashboard",
+    description: "AI-powered platform that optimizes pricing strategies using machine learning. Analyzes e-commerce sales data, predicts pricing models, and offers real-time dynamic pricing suggestions based on customer behavior and competitor data.",
+    image: "/pricing-dashboard.svg",
+    tech: ["Python", "Streamlit", "Plotly", "Machine Learning", "Pandas"],
+    live: "https://github.com/Manibharadwaj/-Dynamic-Pricing-Intelligence-Dashboard",
+    github: "https://github.com/Manibharadwaj/-Dynamic-Pricing-Intelligence-Dashboard",
+  },
+  {
+    title: "Disney+ Clone",
+    description: "A full Disney+ Hotstar frontend clone built with Vite and React featuring arrow navigation, element animations, and interactive video templates for Disney, Marvel, and National Geographic brands.",
+    image: "/disney-clone.svg",
+    tech: ["Vite", "React", "Tailwind CSS", "JavaScript"],
+    live: "https://mydisney-clone-v1.netlify.app/",
+    github: "https://github.com/Manibharadwaj/Disney_clone",
+  },
 ];
 
 export default function ProjectsSection() {
@@ -43,7 +67,7 @@ export default function ProjectsSection() {
   <div className="max-w-screen-lg mx-auto text-center">
     <h3 className="text-4xl font-bold py-2 dark:text-white">Projects</h3>
     <p className="text-lg py-3 leading-8 text-gray-800 dark:text-gray-200">
-      As a passionate developer with a focus on both Fullstack and AI-driven solutions, I&apos;ve worked on diverse projects that showcase my skills in building innovative web applications and intuitive user interfaces. From developing fraud detection systems to emergency response apps, each project reflects my dedication to delivering high-quality, functional, and user-centered digital solutions.
+      As a passionate developer with a focus on both Fullstack and AI-driven solutions, I&apos;ve worked on diverse projects that showcase my skills in building innovative web applications and intuitive user interfaces. From developing fraud detection systems to emergency response apps to a daily.dev-style VS Code extension recognized by their CTO — each project reflects my dedication to delivering high-quality, functional, and user-centered digital solutions.
     </p>
     <p className="text-lg text-gray-700 dark:text-gray-300">Check them out below.</p>
   <br/>
@@ -83,14 +107,16 @@ export default function ProjectsSection() {
               </div>
 
               <div className="flex justify-between items-center text-sm font-medium">
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  Live Demo
-                </a>
+                {project.live !== project.github ? (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    Live Demo
+                  </a>
+                ) : <span />}
                 <a
                   href={project.github}
                   target="_blank"

@@ -1,0 +1,28 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="url(#g)"/>
+  <rect x="40" y="30" width="320" height="190" rx="12" fill="#0b0e17" opacity="0.9"/>
+  <text x="200" y="58" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="14" font-weight="bold">disney+</text>
+  <rect x="55" y="70" width="290" height="130" rx="8" fill="#141a2e"/>
+  <rect x="55" y="70" width="290" height="130" rx="8" fill="url(#h)" opacity="0.3"/>
+  <rect x="55" y="70" width="290" height="4" rx="2" fill="#0063e5"/>
+  <text x="200" y="100" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="11">The Marvels</text>
+  <text x="200" y="118" text-anchor="middle" fill="#888" font-family="sans-serif" font-size="8">Action • Adventure • 2023</text>
+  <rect x="140" y="132" width="120" height="28" rx="14" fill="#0063e5"/>
+  <text x="200" y="150" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="9" font-weight="bold">▶ Watch Now</text>
+  <rect x="75" y="175" width="40" height="16" rx="4" fill="#1c2538"/>
+  <text x="95" y="186" text-anchor="middle" fill="#0063e5" font-family="sans-serif" font-size="6">DISNEY</text>
+  <rect x="125" y="175" width="50" height="16" rx="4" fill="#1c2538"/>
+  <text x="150" y="186" text-anchor="middle" fill="#e62429" font-family="sans-serif" font-size="6">MARVEL</text>
+  <rect x="185" y="175" width="60" height="16" rx="4" fill="#1c2538"/>
+  <text x="215" y="186" text-anchor="middle" fill="#ffd700" font-family="sans-serif" font-size="6">NATGEO</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#030b17"/>
+      <stop offset="100%" stop-color="#0d1b2a"/>
+    </linearGradient>
+    <linearGradient id="h" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0063e5"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+</svg>

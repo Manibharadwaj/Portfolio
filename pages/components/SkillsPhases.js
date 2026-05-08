@@ -31,6 +31,10 @@ const skillsData = [
 export default function SkillsPhases() {
   const [activePhase, setActivePhase] = useState(null);
 
+  const togglePhase = (index) => {
+    setActivePhase(activePhase === index ? null : index);
+  };
+
   return (
     <section className="py-10">
       <div className="text-center">
@@ -43,7 +47,7 @@ export default function SkillsPhases() {
           consumers.
         </p>
         <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-          Hover over each card to explore what I offer.
+          Click or hover on each card to explore what I offer.
         </p>
       </div>
 
@@ -51,9 +55,10 @@ export default function SkillsPhases() {
         {skillsData.map((skill, index) => (
           <div
             key={index}
-            className="relative text-center shadow-lg p-10 rounded-xl my-10 transition duration-500 ease-in-out transform bg-gray-600 hover:bg-teal-600 hover:scale-105 flex-1"
+            className="relative text-center shadow-lg p-10 rounded-xl my-10 transition duration-500 ease-in-out transform bg-gray-600 hover:bg-teal-600 hover:scale-105 flex-1 cursor-pointer"
             onMouseEnter={() => setActivePhase(index)}
             onMouseLeave={() => setActivePhase(null)}
+            onClick={() => togglePhase(index)}
           >
             <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
               <div
@@ -66,7 +71,7 @@ export default function SkillsPhases() {
             </div>
 
             <div
-              className={`transition-all duration-500 opacity-0 transform ${
+              className={`transition-all duration-500 ${
                 activePhase === index ? "opacity-100 scale-100" : "opacity-0 scale-110"
               }`}
             >
@@ -75,7 +80,7 @@ export default function SkillsPhases() {
                 width={100}
                 height={100}
                 alt={skill.title}
-                className="transition-all duration-500"
+                className="transition-all duration-500 animate-float mx-auto"
               />
               <h3 className="text-lg font-medium pt-8 pb-2 text-white">
                 {skill.title}

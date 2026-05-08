@@ -41,13 +41,20 @@ export default function Blog({ posts }) {
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
-        <title>Blog | Mani Bharadwaj</title>
-        <meta name="description" content="Thoughts on books, learning, and building things." />
+        <title>Blog | Mani Bharadwaj — Full Stack Developer</title>
+        <meta name="description" content="Thoughts on books, learning, and building things by Mani Bharadwaj, a full-stack developer and designer." />
+        <meta property="og:title" content="Blog | Mani Bharadwaj" />
+        <meta property="og:description" content="Thoughts on books, learning, and building things by Mani Bharadwaj." />
+        <meta property="og:url" content="https://manibharadwaj.netlify.app/blog" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Blog | Mani Bharadwaj" />
+        <link rel="canonical" href="https://manibharadwaj.netlify.app/blog" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="bg-wheat px-10 dark:bg-gray-900 md:px-20 lg:px-40 min-h-screen">
-        <nav className="py-10 mb-8 flex justify-between dark:text-white">
+        <nav className="py-10 mb-8 flex justify-between items-center dark:text-white">
           <Link href="/" className="font-burtons text-xl hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
             developedby
           </Link>
@@ -130,7 +137,7 @@ export default function Blog({ posts }) {
       <footer className="text-center">
         <div className="border-t border-gray-300 dark:border-gray-700 py-2">
           <p className="text-gray-600 dark:text-gray-400">
-            Phone: <a href="tel:+91 9632453556">+91 9632453556</a>
+            Phone: <a href="tel:+919632453556">+91 9632453556</a>
           </p>
           <p className="text-gray-600 dark:text-gray-400">
             Email: <a href="mailto:manibharadwajcr@gmail.com">manibharadwajcr@gmail.com</a>

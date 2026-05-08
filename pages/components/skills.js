@@ -37,10 +37,10 @@ const Box = ({ img, text, subtext, className, children }) => {
       {img && (
         <Image
           src={img}
-          alt="img"
+          alt={text || "Portfolio showcase image"}
           fill={true}
           style={{ objectFit: 'cover' }}
-          className={`rounded-xl transition-all duration-1000 ${isVisible ? 'blur-sm' : 'blur-none'}`}
+          className={`rounded-xl transition-all duration-1000 blur-sm`}
         />
       )}
 
@@ -49,7 +49,7 @@ const Box = ({ img, text, subtext, className, children }) => {
         {text && (
           <h2
             className={`text-lg font-semibold mb-2 hover:text-yellow-300 transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-4 blur-md'
+              isVisible ? 'opacity-100 translate-y-0 blur-none' : 'opacity-100 translate-y-0 blur-none'
             }`}
           >
             {text}
@@ -58,7 +58,7 @@ const Box = ({ img, text, subtext, className, children }) => {
         {subtext && (
           <p
             className={`text-sm text-gray-200 hover:text-gray-100 transition-all duration-1000 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0 blur-none' : 'opacity-0 translate-y-4 blur-md'
+              isVisible ? 'opacity-100 translate-y-0 blur-none' : 'opacity-100 translate-y-0 blur-none'
             }`}
           >
             {subtext}
@@ -66,7 +66,7 @@ const Box = ({ img, text, subtext, className, children }) => {
         )}
         <div
           className={`transition-all duration-1000 delay-400 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'
           }`}
         >
           {children}
@@ -80,7 +80,7 @@ export default function Skills() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("manibharadwajcr@.com");
+    navigator.clipboard.writeText("manibharadwajcr@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
