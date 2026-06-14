@@ -1,5 +1,5 @@
 ---
-title: "Who Is a True Engineer? (Spoiler: Not Everyone With a Degree)"
+title: "Who Is a True Engineer? Not Everyone With a Degree"
 author: "Mani Bharadwaj"
 date: "2026-06-14"
 cover: "https://picsum.photos/seed/trueengineer/1440/720"
