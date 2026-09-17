@@ -41,7 +41,11 @@ def build():
         ('CodeScroll VS Code Extension', 'TypeScript | VS Code Extension API | Hacker News API | Dev.to API', 'Built an editor-native developer-news extension with topic feeds, article reading, browser handoff, API de-duplication, and persisted bookmarks. Received positive feedback from Daily.dev CTO Ido Shamun about the project.'),
     ]:
         story += [P(title, role), P(tech), P(description)]
-    story += section_title('Open-Source and Community Work') + [P('Maintains and publishes public software projects on GitHub across full-stack web, AI agents, developer tooling, and IoT. Public work includes Jarvis, CodeScroll, Putt Together, Aasha, WebXray, and supporting experiments. GitHub profile: github.com/Manibharadwaj')]
+    story += section_title('Open-Source Contributions')
+    story += bullets([
+        'Twenty — 4 merged pull requests; YC-backed open-source CRM. Contributions covered navigation, CLI re-authentication, OpenAPI cursor correctness, workspace logic, and translated relation labels.',
+        'Infisical — 1 merged pull request improving migration safety with a guarded database trigger in the open-source secrets platform.',
+    ])
     story += section_title('Technical Skills') + [P('Languages: JavaScript, TypeScript, Python, HTML, CSS, C/C++<br/>Frontend: React.js, Next.js, Tailwind CSS, Phaser<br/>Backend: Node.js, Express.js, Hono, REST APIs, WebSockets, Slack Bolt<br/>Data and infrastructure: PostgreSQL, Supabase, Redis, Git, Docker<br/>AI and tooling: LLM agents, MCP, LiveKit, Whisper, VS Code Extension API')]
     story += section_title('Education') + [P('Bachelor of Computer Applications (BCA), Manav Rachna International Institute of Research & Studies | 2022 - 2025'), P('Bachelor of Business Administration (BBA), The East Point College of Higher Education | 2022 - 2025')]
     doc.build(story)
