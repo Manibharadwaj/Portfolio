@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowDown, FiArrowUpRight, FiGithub, FiLinkedin, FiMapPin } from "react-icons/fi";
-import { caseStudies, contact, experience, hero, profile, proofPoints, stack } from "../lib/portfolio-data";
+import { additionalWork, caseStudies, contact, experience, hero, profile, proofPoints, stack } from "../lib/portfolio-data";
 
 function ExternalLink({ href, children, className = "" }) {
   return <a className={className} href={href} target="_blank" rel="noreferrer">{children}</a>;
@@ -27,6 +27,12 @@ function ProjectMedia({ project }) {
 }
 
 export default function Home() {
+  const scrollToSection = (event, id) => {
+    event.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", window.location.pathname);
+  };
+
   return <>
     <Head>
       <title>Mani Bharadwaj — Software Engineer I</title>
@@ -42,16 +48,18 @@ export default function Home() {
     </Head>
 
     <div className="portfolio-shell">
-      <header className="site-header"><a className="brand" href="#top" aria-label="Mani Bharadwaj home">MB<span>.</span></a><nav aria-label="Primary navigation"><a href="#work">Work</a><a href="#experience">Experience</a><Link href="/blog">Writing</Link></nav><ExternalLink className="header-contact" href={`mailto:${profile.email}`}>Let&apos;s talk <FiArrowUpRight aria-hidden="true" /></ExternalLink></header>
+      <header className="site-header"><a className="brand" href="#top" onClick={(event) => scrollToSection(event, "top")} aria-label="Mani Bharadwaj home">MB<span>.</span></a><nav aria-label="Primary navigation"><a href="#work" onClick={(event) => scrollToSection(event, "work")}>Work</a><a href="#experience" onClick={(event) => scrollToSection(event, "experience")}>Experience</a><Link href="/blog">Writing</Link></nav><div className="header-actions"><a className="header-resume" href="/Resume.pdf" target="_blank" rel="noreferrer">Resume <FiArrowUpRight aria-hidden="true" /></a><ExternalLink className="header-contact" href={`mailto:${profile.email}`}>Let&apos;s talk <FiArrowUpRight aria-hidden="true" /></ExternalLink></div></header>
       <main id="top">
         <section className="hero section-wrap" aria-labelledby="hero-title">
-          <div className="hero-copy"><p className="eyebrow"><span /> {hero.eyebrow}</p><h1 id="hero-title">{hero.title}</h1><p className="hero-lead">{hero.lead}</p><div className="hero-actions"><a className="button button-primary" href={hero.primaryCta.href}>{hero.primaryCta.label} <FiArrowDown aria-hidden="true" /></a><a className="button button-secondary" href={hero.secondaryCta.href}>{hero.secondaryCta.label} <FiArrowUpRight aria-hidden="true" /></a></div><div className="hero-meta"><span><FiMapPin aria-hidden="true" /> {profile.location}</span><span>React · Next.js · Node.js · Python</span></div></div>
+          <div className="hero-copy"><p className="eyebrow"><span /> {hero.eyebrow}</p><h1 id="hero-title">{hero.title}</h1><p className="hero-lead">{hero.lead}</p><div className="hero-actions"><a className="button button-primary" href={hero.primaryCta.href} onClick={(event) => scrollToSection(event, "work")}>{hero.primaryCta.label} <FiArrowDown aria-hidden="true" /></a><a className="button button-secondary" href={hero.secondaryCta.href}>{hero.secondaryCta.label} <FiArrowUpRight aria-hidden="true" /></a></div><div className="hero-meta"><span><FiMapPin aria-hidden="true" /> {profile.location}</span><span>React · Next.js · Node.js · Python</span></div></div>
           <div className="hero-portrait-wrap"><div className="portrait-orbit orbit-one" aria-hidden="true" /><div className="portrait-orbit orbit-two" aria-hidden="true" /><div className="portrait-frame"><Image src="/mani-portrait-v2.png" alt="Mani Bharadwaj outdoors in Bengaluru" fill priority sizes="(max-width: 760px) 92vw, 40vw" className="portrait" /></div><div className="portrait-note"><span>Currently</span><strong>Building useful systems</strong></div></div>
         </section>
 
         <section className="proof-band" aria-label="Engineering focus"><div className="section-wrap proof-grid">{proofPoints.map((point, index) => <article className="proof-item" key={point.label}><span>0{index + 1}</span><p>{point.label}</p><strong>{point.value}</strong><small>{point.detail}</small></article>)}</div></section>
 
         <section className="work-section section-wrap" id="work" aria-labelledby="work-title"><div className="section-heading"><p className="eyebrow">Selected work</p><h2 id="work-title">Projects with real systems behind them.</h2><p>Three things I&apos;ve built that show how I think about products, edge cases, and the people using them.</p></div><div className="case-study-list">{caseStudies.map((project, index) => <article className={`case-study case-study-${index + 1}`} key={project.slug}><ProjectMedia project={project} /><div className="case-copy"><p className="case-index">0{index + 1} <span>{project.eyebrow}</span></p><h3>{project.name}</h3><p className="case-description">{project.description}</p><dl className="case-detail"><div><dt>The problem</dt><dd>{project.problem}</dd></div><div><dt>What I built</dt><dd>{project.solution}</dd></div></dl><ul className="outcome-list">{project.outcomes.slice(0, 2).map((outcome) => <li key={outcome}>{outcome}</li>)}</ul><div className="case-footer"><div className="tech-list">{project.tech.map((item) => <span key={item}>{item}</span>)}</div><ExternalLink href={project.github} className="source-link">{project.repoLabel} <FiArrowUpRight aria-hidden="true" /></ExternalLink></div></div></article>)}</div></section>
+
+        <section className="more-work section-wrap" aria-labelledby="more-work-title"><div className="section-heading compact"><p className="eyebrow">More builds</p><h2 id="more-work-title">A wider trail of experiments and tools.</h2></div><div className="more-work-list">{additionalWork.map((item, index) => <article className="more-work-item" key={item.name}><span className="more-work-number">0{index + 1}</span><div><h3>{item.name}</h3><p>{item.description}</p><span className="more-work-tech">{item.tech}</span></div><div className="more-work-links"><ExternalLink href={item.github}>GitHub <FiArrowUpRight aria-hidden="true" /></ExternalLink>{item.secondaryGithub && <ExternalLink href={item.secondaryGithub}>Server <FiArrowUpRight aria-hidden="true" /></ExternalLink>}{item.live && <ExternalLink href={item.live}>Live <FiArrowUpRight aria-hidden="true" /></ExternalLink>}</div></article>)}</div></section>
 
         <section className="build-section" aria-labelledby="build-title"><div className="section-wrap build-grid"><div><p className="eyebrow">How I build</p><h2 id="build-title">Useful beats flashy.</h2><p>I like working from the actual workflow: what is slowing someone down, where data moves, and what needs to be reliable when the product gets used for real.</p></div><ol className="build-steps"><li><span>01</span><div><strong>Understand the work</strong><p>Turn loose requirements into the flow, constraints, and decisions that matter.</p></div></li><li><span>02</span><div><strong>Build the system</strong><p>Shape the UI, services, and data around a product that can be understood and maintained.</p></div></li><li><span>03</span><div><strong>Ship with intent</strong><p>Validate edge cases, tighten the experience, and leave the next person a clearer path forward.</p></div></li></ol></div></section>
 
