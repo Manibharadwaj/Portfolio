@@ -2,13 +2,21 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowDown, FiArrowUpRight, FiGithub, FiLinkedin, FiMapPin } from "react-icons/fi";
-import { additionalWork, caseStudies, contact, experience, hero, profile, proofPoints, stack } from "../lib/portfolio-data";
+import { additionalWork, caseStudies, contact, experience, hero, openSourceWork, profile, proofPoints, stack } from "../lib/portfolio-data";
 
 function ExternalLink({ href, children, className = "" }) {
   return <a className={className} href={href} target="_blank" rel="noreferrer">{children}</a>;
 }
 
 function ProjectMedia({ project }) {
+  if (project.slug === "esp32-monitor") {
+    return <div className="project-media project-media-esp32" role="img" aria-label={project.media.alt}><div className="sensor-board"><span className="sensor-chip">ESP32</span><i /><i /><i /><b>LIVE SENSOR DATA</b><strong>24.8°</strong><small>temperature · stable</small></div><div className="signal signal-one" /><div className="signal signal-two" /><div className="sensor-pulse" /></div>;
+  }
+
+  if (project.slug === "jarvis") {
+    return <div className="project-media project-media-jarvis" role="img" aria-label={project.media.alt}><div className="jarvis-orb"><span>J.A.R.V.I.S.</span><strong>LISTENING</strong></div><div className="jarvis-card"><span>Next check-in</span><b>08:30 AM</b><small>memory synced · call ready</small></div><div className="jarvis-wave"><i /><i /><i /><i /><i /><i /><i /></div></div>;
+  }
+
   if (project.slug === "aasha") {
     return <div className="project-media project-media-aasha"><Image src="/aasha-app-home.png" alt={project.media.alt} fill sizes="(max-width: 760px) 100vw, 48vw" className="project-screenshot" /></div>;
   }
@@ -60,6 +68,8 @@ export default function Home() {
         <section className="work-section section-wrap" id="work" aria-labelledby="work-title"><div className="section-heading"><p className="eyebrow">Selected work</p><h2 id="work-title">Projects with real systems behind them.</h2><p>Three things I&apos;ve built that show how I think about products, edge cases, and the people using them.</p></div><div className="case-study-list">{caseStudies.map((project, index) => <article className={`case-study case-study-${index + 1}`} key={project.slug}><ProjectMedia project={project} /><div className="case-copy"><p className="case-index">0{index + 1} <span>{project.eyebrow}</span></p><h3>{project.name}</h3><p className="case-description">{project.description}</p><dl className="case-detail"><div><dt>The problem</dt><dd>{project.problem}</dd></div><div><dt>What I built</dt><dd>{project.solution}</dd></div></dl><ul className="outcome-list">{project.outcomes.slice(0, 2).map((outcome) => <li key={outcome}>{outcome}</li>)}</ul><div className="case-footer"><div className="tech-list">{project.tech.map((item) => <span key={item}>{item}</span>)}</div><ExternalLink href={project.github} className="source-link">{project.repoLabel} <FiArrowUpRight aria-hidden="true" /></ExternalLink></div></div></article>)}</div></section>
 
         <section className="more-work section-wrap" aria-labelledby="more-work-title"><div className="section-heading compact"><p className="eyebrow">More builds</p><h2 id="more-work-title">A wider trail of experiments and tools.</h2></div><div className="more-work-list">{additionalWork.map((item, index) => <article className="more-work-item" key={item.name}><span className="more-work-number">0{index + 1}</span><div><h3>{item.name}</h3><p>{item.description}</p><span className="more-work-tech">{item.tech}</span></div><div className="more-work-links"><ExternalLink href={item.github}>GitHub <FiArrowUpRight aria-hidden="true" /></ExternalLink>{item.secondaryGithub && <ExternalLink href={item.secondaryGithub}>Server <FiArrowUpRight aria-hidden="true" /></ExternalLink>}{item.live && <ExternalLink href={item.live}>Live <FiArrowUpRight aria-hidden="true" /></ExternalLink>}</div></article>)}</div></section>
+
+        <section className="oss-section section-wrap" aria-labelledby="oss-title"><div className="section-heading compact"><p className="eyebrow">Open source</p><h2 id="oss-title">I contribute where the tools are built.</h2><p>Public contribution work across product UI, developer tooling, and platform maintenance.</p></div><div className="oss-list">{openSourceWork.map((item, index) => <article className="oss-item" key={item.name}><span className="more-work-number">0{index + 1}</span><div><h3>{item.name}</h3><p>{item.detail}</p></div><div className="more-work-links"><ExternalLink href={item.github}>Fork <FiArrowUpRight aria-hidden="true" /></ExternalLink><ExternalLink href={item.upstream}>Upstream <FiArrowUpRight aria-hidden="true" /></ExternalLink></div></article>)}</div></section>
 
         <section className="build-section" aria-labelledby="build-title"><div className="section-wrap build-grid"><div><p className="eyebrow">How I build</p><h2 id="build-title">Useful beats flashy.</h2><p>I like working from the actual workflow: what is slowing someone down, where data moves, and what needs to be reliable when the product gets used for real.</p></div><ol className="build-steps"><li><span>01</span><div><strong>Understand the work</strong><p>Turn loose requirements into the flow, constraints, and decisions that matter.</p></div></li><li><span>02</span><div><strong>Build the system</strong><p>Shape the UI, services, and data around a product that can be understood and maintained.</p></div></li><li><span>03</span><div><strong>Ship with intent</strong><p>Validate edge cases, tighten the experience, and leave the next person a clearer path forward.</p></div></li></ol></div></section>
 
