@@ -416,7 +416,7 @@ export default function PaymentPage() {
         prefill: {
           name: 'Mani Bharadwaj',
           email: 'manibharadwajcr@gmail.com',
-          contact: '9632453556',
+          contact: '0000000000', // replace with the buyer's phone number at checkout
         },
         theme: {
           color: '#6366f1',

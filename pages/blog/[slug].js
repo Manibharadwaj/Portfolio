@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
@@ -74,7 +75,7 @@ export default function BlogPost({ frontmatter, content }) {
       <main className="bg-wheat px-10 dark:bg-gray-900 md:px-20 lg:px-40 min-h-screen">
         <nav className="py-10 mb-8 flex justify-between items-center dark:text-white">
           <Link href="/" className="font-burtons text-xl hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
-            developedby
+            MB.
           </Link>
           <ul className="flex items-center gap-8">
             <li>
@@ -88,10 +89,9 @@ export default function BlogPost({ frontmatter, content }) {
               </Link>
             </li>
             <li>
-              <BsFillMoonStarsFill
-                onClick={() => setDarkMode(!darkMode)}
-                className="cursor-pointer text-2xl"
-              />
+              <button type="button" aria-label="Toggle dark mode" className="cursor-pointer text-2xl" onClick={() => setDarkMode(!darkMode)}>
+                <BsFillMoonStarsFill aria-hidden="true" />
+              </button>
             </li>
           </ul>
         </nav>
@@ -125,9 +125,11 @@ export default function BlogPost({ frontmatter, content }) {
           </header>
 
           <div className="w-full rounded-2xl overflow-hidden mb-10 bg-gray-100 dark:bg-gray-700 flex items-center justify-center p-6">
-            <img
+            <Image
               src={frontmatter.cover}
               alt={frontmatter.title}
+              width={1440}
+              height={720}
               className="max-h-96 object-contain"
             />
           </div>
@@ -149,9 +151,6 @@ export default function BlogPost({ frontmatter, content }) {
 
       <footer className="text-center">
         <div className="border-t border-gray-300 dark:border-gray-700 py-2">
-          <p className="text-gray-600 dark:text-gray-400">
-            Phone: <a href="tel:+919632453556">+91 9632453556</a>
-          </p>
           <p className="text-gray-600 dark:text-gray-400">
             Email: <a href="mailto:manibharadwajcr@gmail.com">manibharadwajcr@gmail.com</a>
           </p>

@@ -2,7 +2,7 @@
 title: "From Moodboard to Pattern: The Design Workflow Nobody Teaches You"
 author: "Mani Bharadwaj"
 date: "2026-06-23"
-cover: "/blog/moodboard-to-pattern.jpg"
+cover: "/blog/moodboard-to-pattern.svg"
 excerpt: "Most developers skip the design phase entirely — or worse, let AI decide everything. Here's the workflow I use to go from a vague idea to a shipped site that looks intentional, not generated."
 tags: ["design", "workflow", "wordpress", "figma", "AI"]
 ---

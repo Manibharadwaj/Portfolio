@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
@@ -41,8 +42,8 @@ export default function Blog({ posts }) {
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
-        <title>Blog | Mani Bharadwaj — Full Stack Developer</title>
-        <meta name="description" content="Thoughts on books, learning, and building things by Mani Bharadwaj, a full-stack developer and designer." />
+        <title>Writing | Mani Bharadwaj — Software Engineer I</title>
+        <meta name="description" content="Notes on learning, engineering, and building useful software by Mani Bharadwaj." />
         <meta property="og:title" content="Blog | Mani Bharadwaj" />
         <meta property="og:description" content="Thoughts on books, learning, and building things by Mani Bharadwaj." />
         <meta property="og:url" content="https://manibharadwaj.netlify.app/blog" />
@@ -56,7 +57,7 @@ export default function Blog({ posts }) {
       <main className="bg-wheat px-10 dark:bg-gray-900 md:px-20 lg:px-40 min-h-screen">
         <nav className="py-10 mb-8 flex justify-between items-center dark:text-white">
           <Link href="/" className="font-burtons text-xl hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
-            developedby
+            MB.
           </Link>
           <ul className="flex items-center gap-8">
             <li>
@@ -70,10 +71,9 @@ export default function Blog({ posts }) {
               </Link>
             </li>
             <li>
-              <BsFillMoonStarsFill
-                onClick={() => setDarkMode(!darkMode)}
-                className="cursor-pointer text-2xl"
-              />
+              <button type="button" aria-label="Toggle dark mode" className="cursor-pointer text-2xl" onClick={() => setDarkMode(!darkMode)}>
+                <BsFillMoonStarsFill aria-hidden="true" />
+              </button>
             </li>
           </ul>
         </nav>
@@ -92,9 +92,11 @@ export default function Blog({ posts }) {
             <Link key={post.slug} href={`/blog/${post.slug}`}>
               <article className="group cursor-pointer bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="h-56 w-full overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center p-4">
-                  <img
+                  <Image
                     src={post.frontmatter.cover}
                     alt={post.frontmatter.title}
+                    width={1440}
+                    height={720}
                     className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -136,9 +138,6 @@ export default function Blog({ posts }) {
 
       <footer className="text-center">
         <div className="border-t border-gray-300 dark:border-gray-700 py-2">
-          <p className="text-gray-600 dark:text-gray-400">
-            Phone: <a href="tel:+919632453556">+91 9632453556</a>
-          </p>
           <p className="text-gray-600 dark:text-gray-400">
             Email: <a href="mailto:manibharadwajcr@gmail.com">manibharadwajcr@gmail.com</a>
           </p>

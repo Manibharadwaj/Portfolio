@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" role="img" aria-labelledby="title desc">
+  <title id="title">Moodboard to pattern</title>
+  <desc id="desc">A warm geometric pattern of overlapping circles and lines.</desc>
+  <rect width="1440" height="720" fill="#e9e4d8"/>
+  <g fill="none" stroke="#1d3a4a" stroke-width="3" opacity=".8">
+    <circle cx="220" cy="150" r="130"/><circle cx="440" cy="330" r="210"/><circle cx="900" cy="210" r="170"/><circle cx="1190" cy="470" r="230"/>
+    <path d="M0 570 310 250l250 190 250-300 360 260 270-190"/>
+  </g>
+  <g fill="#2563eb" opacity=".9"><circle cx="440" cy="330" r="28"/><circle cx="900" cy="210" r="20"/><circle cx="1190" cy="470" r="34"/></g>
+  <g fill="#c6fa54"><path d="m80 90 34 18-34 18-34-18z"/><path d="m1320 120 42 22-42 22-42-22z"/></g>
+</svg>
